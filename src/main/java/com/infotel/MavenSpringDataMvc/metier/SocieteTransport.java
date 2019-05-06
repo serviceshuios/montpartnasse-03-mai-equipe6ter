@@ -19,7 +19,7 @@ public class SocieteTransport {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 private int idSociete;
-private String nomSociete;
+private String nomSociete; 
 private String numSiret;
 private Date dateCreation;
 public int getIdSociete() {
