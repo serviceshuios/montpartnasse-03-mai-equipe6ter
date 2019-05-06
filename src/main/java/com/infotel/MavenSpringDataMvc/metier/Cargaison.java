@@ -1,9 +1,13 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
 import org.springframework.context.annotation.Scope;
@@ -11,6 +15,9 @@ import org.springframework.stereotype.Component;
 
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE_CARG")
+@DiscriminatorValue("CARG")
 @Scope
 @Component
 public abstract class Cargaison {
