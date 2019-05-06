@@ -7,5 +7,5 @@ import com.infotel.MavenSpringDataMvc.metier.Routiere;
 
 @Transactional
 public interface RoutiereRepository extends JpaRepository<Routiere, Integer>{
-
+ 
 }

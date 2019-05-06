@@ -7,5 +7,5 @@ import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 
 @Transactional
 public interface AerienneRepository extends JpaRepository<Aerienne, Integer> {
-
+ 
 }
