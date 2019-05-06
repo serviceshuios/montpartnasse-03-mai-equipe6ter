@@ -19,6 +19,7 @@ public class SoTranController {
 	public String lister(Model model) {
 		model.addAttribute("societeTransport", new SocieteTransport());
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
+		model.addAttribute("cargaisons",service.findAllCargaison());
 		return "societeTransports";
 
 	}
@@ -29,11 +30,13 @@ public class SoTranController {
 			service.ajouterSocieteTransport(societeTransport);
 			model.addAttribute("societeTransport", new SocieteTransport());
 			model.addAttribute("societeTransports", service.findAllSocieteTransport());
+			model.addAttribute("cargaisons",service.findAllCargaison());
 			return "societeTransports";
 		} else {
 			service.modifierSocieteTransport(societeTransport);
 			model.addAttribute("societeTransport", new SocieteTransport());
 			model.addAttribute("societeTransports", service.findAllSocieteTransport());
+			model.addAttribute("cargaisons",service.findAllCargaison());
 			return "societeTransports";
 		}
 	}
@@ -43,6 +46,7 @@ public class SoTranController {
 		service.supprimerSocieteTransport(idSociete);
 		model.addAttribute("societeTransport", new SocieteTransport());
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
+		model.addAttribute("cargaisons",service.findAllCargaison());
 		return "societeTransports";
 	}
 
@@ -50,6 +54,7 @@ public class SoTranController {
 	public String edit(@RequestParam int idSociete, Model model) {
 		model.addAttribute("societeTransport", service.getSocieteTransport(idSociete));
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
+		model.addAttribute("cargaisons",service.findAllCargaison());
 		return "societeTransports";
 	}
 

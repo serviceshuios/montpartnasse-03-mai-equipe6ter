@@ -13,7 +13,8 @@
 <body>
 	<h2>CRUD SOCIETES DE TRANSPORT</h2>
 	<div>
-		<f:form modelAttribute="societeTransport" method="POST" action="saveSocieteTransport">
+		<f:form modelAttribute="societeTransport" method="POST"
+			action="saveSocieteTransport">
 			<table>
 				<tr>
 					<td><f:hidden path="idSociete" /></td>
@@ -30,18 +31,27 @@
 				</tr>
 				<tr>
 					<td>Date de Création:</td>
-					<td><f:input path="dateCreation" type="date"/></td>
+					<td><f:input path="dateCreation" type="date" /></td>
 					<td><f:errors path="dateCreation" cssClass="error" /></td>
 				</tr>
 
 
+				<!-- DROPDOWN code -->
+				<tr>
+					<td>Cargaison:</td>
+					<td><f:select path="cargaisons">
+							<f:option value="" label="Select Job" />
+							<f:options value="" items="${cargaisons}" />
+						</f:select></td>
+					<td><f:errors path="cargaisons" /></td>
+				</tr>
 
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
 			</table>
 
-			
+
 
 
 		</f:form>

@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.infotel.MavenSpringDataMvc.dao.AerienneRepository;
 import com.infotel.MavenSpringDataMvc.dao.RoutiereRepository;
+import com.infotel.MavenSpringDataMvc.dao.CargaisonRepository;
 import com.infotel.MavenSpringDataMvc.dao.SocieteTransportRepository;
 import com.infotel.MavenSpringDataMvc.metier.Aerienne;
+import com.infotel.MavenSpringDataMvc.metier.Cargaison;
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
@@ -21,6 +23,8 @@ public class ServiceImpl implements Iservice {
 	private RoutiereRepository routiereRepository;
 	@Autowired
 	private SocieteTransportRepository societeTransportRepository;
+	@Autowired
+	private CargaisonRepository CargaisonRepository;
 
 	public AerienneRepository getAerienneRepository() {
 		return aerienneRepository;
@@ -145,5 +149,13 @@ public class ServiceImpl implements Iservice {
 		// TODO Auto-generated method stub
 		return aerienneRepository.findAll();
 	}
+
+	@Override
+	public List<Cargaison> findAllCargaison() {
+		// TODO Auto-generated method stub
+		return CargaisonRepository.findAll();
+	}
+	
+	
 
 }
