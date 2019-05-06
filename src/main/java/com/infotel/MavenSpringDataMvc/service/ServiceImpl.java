@@ -68,9 +68,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void supprimerSocieteTransport(SocieteTransport s) {
+	public void supprimerSocieteTransport(int idSociete) {
 		// TODO Auto-generated method stub
-		societeTransportRepository.delete(s);
+		societeTransportRepository.deleteById(idSociete);;
 	}
 
 	@Override
@@ -98,9 +98,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void supprimerRoutiere(Routiere r) {
+	public void supprimerRoutiere(int idCargaison) {
 		// TODO Auto-generated method stub
-		routiereRepository.delete(r);
+		routiereRepository.deleteById(idCargaison);;
 	}
 
 	@Override
@@ -128,9 +128,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public void supprimerAerienne(Aerienne a) {
+	public void supprimerAerienne(int idCargaison) {
 		// TODO Auto-generated method stub
-		aerienneRepository.delete(a);
+		aerienneRepository.deleteById(idCargaison);;
 	}
 
 	@Override

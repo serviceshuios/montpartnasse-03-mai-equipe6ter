@@ -9,6 +9,9 @@
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<p><a href = "http://localhost:8080/TpSpringMvc/indexSocieteTransport">Formulaire Sociétéss de Transport</a></p>
+<p><a href = "http://localhost:8080/TpSpringMvc/indexAerienne">Formulaire Cargaisons Aériennes</a></p>
+<p><a href = "http://localhost:8080/TpSpringMvc/indexRoutiere">Formulaire Cargaisons Routières</a></p>
+
 </body>
 </html>
