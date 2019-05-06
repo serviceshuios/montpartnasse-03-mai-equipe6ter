@@ -11,7 +11,7 @@
 
 
 	<!-- CHARGEMENT du fichier de properties -->
-	<context:property-placeholder location="classpath*:db.properties" />
+	<context:property-placeholder location="classpath*:sgbd.properties" />
 
 	<!-- bean dataSource = bean de source des données, ou se retrouvent les 
 		données à manipuler dans mon application -->
