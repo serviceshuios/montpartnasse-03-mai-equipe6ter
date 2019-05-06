@@ -13,7 +13,7 @@
 <body>
 	<h2>CRUD SOCIETES DE TRANSPORT</h2>
 	<div>
-		<f:form modelAttribute="societeTransport" method="POST" action="/saveSocieteTransport">
+		<f:form modelAttribute="societeTransport" method="POST" action="saveSocieteTransport">
 			<table>
 				<tr>
 					<td><f:hidden path="idSociete" /></td>
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Date de Création:</td>
-					<td><f:input path="dateCreation" /></td>
+					<td><f:input path="dateCreation" type="date"/></td>
 					<td><f:errors path="dateCreation" cssClass="error" /></td>
 				</tr>
 

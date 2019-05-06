@@ -67,7 +67,7 @@ public abstract class Cargaison {
 	@Override
 	public String toString() {
 		return "Cargaison [idCargaison=" + idCargaison + ", nomCargaison=" + nomCargaison + ", depart=" + depart
-				+ ", destination=" + destination + ", societeTransport=" + societeTransport + "]";
+				+ ", destination=" + destination + "]";
 	}
 	
 	

@@ -39,16 +39,16 @@ public class SoTranController {
 	}
 
 	@RequestMapping(value = "/deleteSocieteTransport")
-	public String delete(@RequestParam int IdSociete, Model model) {
-		service.supprimerSocieteTransport(IdSociete);
+	public String delete(@RequestParam int idSociete, Model model) {
+		service.supprimerSocieteTransport(idSociete);
 		model.addAttribute("societeTransport", new SocieteTransport());
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
 		return "societeTransports";
 	}
 
 	@RequestMapping(value = "/editSocieteTransport")
-	public String edit(@RequestParam int IdSociete, Model model) {
-		model.addAttribute("societeTransport", service.getSocieteTransport(IdSociete));
+	public String edit(@RequestParam int idSociete, Model model) {
+		model.addAttribute("societeTransport", service.getSocieteTransport(idSociete));
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
 		return "societeTransports";
 	}

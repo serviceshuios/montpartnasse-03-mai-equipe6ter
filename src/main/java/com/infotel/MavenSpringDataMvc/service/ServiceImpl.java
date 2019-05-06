@@ -13,9 +13,8 @@ import com.infotel.MavenSpringDataMvc.metier.Aerienne;
 import com.infotel.MavenSpringDataMvc.metier.Routiere;
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 
-
 @Service
-public class ServiceImpl implements Iservice{
+public class ServiceImpl implements Iservice {
 	@Autowired
 	private AerienneRepository aerienneRepository;
 	@Autowired
@@ -47,8 +46,9 @@ public class ServiceImpl implements Iservice{
 		this.societeTransportRepository = societeTransportRepository;
 	}
 
-	
-	
+	// ++++++++++++++++++++++++++METHODES SOCIETE
+	// TRANSPORTS++++++++++++++++++++++++++++++++++++++
+
 	@Override
 	public SocieteTransport ajouterSocieteTransport(SocieteTransport s) {
 		// TODO Auto-generated method stub
@@ -56,9 +56,8 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public Optional<SocieteTransport> getSocieteTransport(int idSociete) {
-		// TODO Auto-generated method stub
-		return societeTransportRepository.findById(idSociete);
+	public SocieteTransport getSocieteTransport(int idSociete) {
+		return societeTransportRepository.findById(idSociete).get();
 	}
 
 	@Override
@@ -70,7 +69,8 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void supprimerSocieteTransport(int idSociete) {
 		// TODO Auto-generated method stub
-		societeTransportRepository.deleteById(idSociete);;
+		societeTransportRepository.deleteById(idSociete);
+		;
 	}
 
 	@Override
@@ -79,6 +79,9 @@ public class ServiceImpl implements Iservice{
 		return societeTransportRepository.findAll();
 	}
 
+	// ++++++++++++++++++++++++++METHODES CARGAISON
+	// ROUTIERE++++++++++++++++++++++++++++++++++++++
+
 	@Override
 	public Routiere ajouterRoutiere(Routiere r) {
 		// TODO Auto-generated method stub
@@ -86,9 +89,9 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public Optional<Routiere> getRoutiere(int idCargaison) {
-		// TODO Auto-generated method stub
-		return routiereRepository.findById(idCargaison);
+	public Routiere getRoutiere(int idCargaison) {
+
+		return routiereRepository.findById(idCargaison).get();
 	}
 
 	@Override
@@ -100,7 +103,8 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void supprimerRoutiere(int idCargaison) {
 		// TODO Auto-generated method stub
-		routiereRepository.deleteById(idCargaison);;
+		routiereRepository.deleteById(idCargaison);
+		;
 	}
 
 	@Override
@@ -109,6 +113,9 @@ public class ServiceImpl implements Iservice{
 		return routiereRepository.findAll();
 	}
 
+	// ++++++++++++++++++++++++++METHODES CARGAISON
+	// AERIENNE++++++++++++++++++++++++++++++++++++++
+
 	@Override
 	public Aerienne ajouterAerienne(Aerienne a) {
 		// TODO Auto-generated method stub
@@ -116,9 +123,8 @@ public class ServiceImpl implements Iservice{
 	}
 
 	@Override
-	public Optional<Aerienne> getAerienne(int idCargaison) {
-		// TODO Auto-generated method stub
-		return aerienneRepository.findById(idCargaison);
+	public Aerienne getAerienne(int idCargaison) {
+		return aerienneRepository.findById(idCargaison).get();
 	}
 
 	@Override
@@ -130,7 +136,8 @@ public class ServiceImpl implements Iservice{
 	@Override
 	public void supprimerAerienne(int idCargaison) {
 		// TODO Auto-generated method stub
-		aerienneRepository.deleteById(idCargaison);;
+		aerienneRepository.deleteById(idCargaison);
+		;
 	}
 
 	@Override
