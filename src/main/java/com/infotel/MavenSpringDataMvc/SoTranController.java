@@ -25,12 +25,14 @@ public class SoTranController {
 	}
 
 	@RequestMapping(value = "/saveSocieteTransport")
-	public String save(SocieteTransport societeTransport, Model model) {
+	public String save(SocieteTransport societeTransport, Integer idCargaison, Model model) {
 		if (societeTransport.getIdSociete() == 0) {
 			service.ajouterSocieteTransport(societeTransport);
+			service.ajouterCargaisonSociete(societeTransport, idCargaison);
 			model.addAttribute("societeTransport", new SocieteTransport());
 			model.addAttribute("societeTransports", service.findAllSocieteTransport());
 			model.addAttribute("cargaisons",service.findAllCargaison());
+			
 			return "societeTransports";
 		} else {
 			service.modifierSocieteTransport(societeTransport);
