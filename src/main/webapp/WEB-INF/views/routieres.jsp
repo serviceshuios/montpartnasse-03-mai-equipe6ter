@@ -13,7 +13,7 @@
 <body>
 	<h2>CRUD ROUTIERES</h2>
 	<div>
-		<f:form modelAttribute="routiere" method="POST" action="/saveRoutiere">
+		<f:form modelAttribute="routiere" method="POST" action="saveRoutiere">
 			<table>
 				<tr>
 					<td><f:hidden path="idCargaison" /></td>
@@ -77,8 +77,8 @@
 					<td>${r.destination}</td>
 					<td>${r.immatriculation}</td>
 					<td>${r.peage}</td>
-					<td><a href="deleteRoutiere?idCargaison=${s.idCargaison}">supprimer</a></td>
-					<td><a href="editRoutiere?idCargaison=${s.idCargaison}">editer</a></td>
+					<td><a href="deleteRoutiere?idCargaison=${r.idCargaison}">supprimer</a></td>
+					<td><a href="editRoutiere?idCargaison=${r.idCargaison}">editer</a></td>
 				</tr>
 			</c:forEach>
 		</table>

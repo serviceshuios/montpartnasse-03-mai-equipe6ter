@@ -39,16 +39,16 @@ public class AerienneController {
 	}
 
 	@RequestMapping(value = "/deleteAerienne")
-	public String delete(@RequestParam int IdCargaison, Model model) {
-		service.supprimerAerienne(IdCargaison);
+	public String delete(@RequestParam int idCargaison, Model model) {
+		service.supprimerAerienne(idCargaison);
 		model.addAttribute("aerienne", new Aerienne());
 		model.addAttribute("aeriennes", service.findAllAerienne());
 		return "aeriennes";
 	}
 
 	@RequestMapping(value = "/editAerienne")
-	public String edit(@RequestParam int IdCargaison, Model model) {
-		model.addAttribute("aerienne", service.getAerienne(IdCargaison));
+	public String edit(@RequestParam int idCargaison, Model model) {
+		model.addAttribute("aerienne", service.getAerienne(idCargaison));
 		model.addAttribute("aeriennes", service.findAllAerienne());
 		return "aeriennes";
 	}
