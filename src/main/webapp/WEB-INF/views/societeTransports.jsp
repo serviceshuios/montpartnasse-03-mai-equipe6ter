@@ -13,7 +13,7 @@
 <body>
 	<h2>CRUD SOCIETES DE TRANSPORT</h2>
 	<div>
-		<f:form modelAttribute="societeTransports" method="POST" action="/saveSocieteTransport">
+		<f:form modelAttribute="societeTransport" method="POST" action="/saveSocieteTransport">
 			<table>
 				<tr>
 					<td><f:hidden path="idSociete" /></td>

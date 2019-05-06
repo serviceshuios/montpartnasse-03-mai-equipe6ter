@@ -22,8 +22,8 @@ public class SocieteTransport {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private int idSociete;
+	
 	private String nomSociete;
 	private String numSiret;
 	private Date dateCreation;
@@ -74,7 +74,7 @@ public class SocieteTransport {
 	@Override
 	public String toString() {
 		return "SocieteTransport [idSociete=" + idSociete + ", nomSociete=" + nomSociete + ", numSiret=" + numSiret
-				+ ", dateCreation=" + dateCreation + ", cargaisons=" + cargaisons + "]";
+				+ ", dateCreation=" + dateCreation + "]";
 	}
 	
 	
