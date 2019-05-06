@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.infotel.MavenSpringDataMvc.metier.SocieteTransport;
 import com.infotel.MavenSpringDataMvc.service.Iservice;
 
@@ -25,10 +26,13 @@ public class SoTranController {
 	}
 
 	@RequestMapping(value = "/saveSocieteTransport")
-	public String save(SocieteTransport societeTransport, Integer idCargaison, Model model) {
+	public String save(SocieteTransport societeTransport, Integer idCargaison, Integer idSociete, Model model) {
 		if (societeTransport.getIdSociete() == 0) {
+			
+			System.out.println(societeTransport);
 			service.ajouterSocieteTransport(societeTransport);
-			service.ajouterCargaisonSociete(societeTransport, idCargaison);
+			
+			//service.ajouterCargaisonSociete(idSociete, idCargaison);
 			model.addAttribute("societeTransport", new SocieteTransport());
 			model.addAttribute("societeTransports", service.findAllSocieteTransport());
 			model.addAttribute("cargaisons",service.findAllCargaison());

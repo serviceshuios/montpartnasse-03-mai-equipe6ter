@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.infotel.MavenSpringDataMvc"},{"l":"com.infotel.MavenSpringDataMvc.dao"},{"l":"com.infotel.MavenSpringDataMvc.metier"},{"l":"com.infotel.MavenSpringDataMvc.service"}]

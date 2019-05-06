@@ -29,5 +29,5 @@ public interface Iservice {
 	public List<Aerienne> findAllAerienne();
 	
 	public List<Cargaison> findAllCargaison();
-	public void ajouterCargaisonSociete(SocieteTransport societeTransport, Integer idCargaison);
+	public void ajouterCargaisonSociete(int idSociete, Integer idCargaison);
 }

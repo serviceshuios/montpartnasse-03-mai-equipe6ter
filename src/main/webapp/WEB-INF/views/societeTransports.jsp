@@ -40,8 +40,8 @@
 				<tr>
 					<td>Cargaison:</td>
 					<td><f:select path="cargaisons">
-							<f:option value="" label="Select Job" />
-							<f:options value="" items="${cargaisons}" />
+							<f:option value="" label="Sélectionner une cargaison" />
+							<f:options value="idCargaison" items="${cargaisons}" />
 						</f:select></td>
 					<td><f:errors path="cargaisons" /></td>
 				</tr>
