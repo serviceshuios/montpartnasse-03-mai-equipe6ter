@@ -1,12 +1,57 @@
 package com.infotel.MavenSpringDataMvc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.infotel.MavenSpringDataMvc.metier.Routiere;
+import com.infotel.MavenSpringDataMvc.service.Iservice;
 
 @Controller
-public class CargaisonController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(CargaisonController.class);
+public class RoutiereController {
+
+	@Autowired
+	private Iservice service;
+
+	@RequestMapping(value = "/indexRoutiere", method = RequestMethod.GET)
+	public String lister(Model model) {
+		model.addAttribute("routiere", new Routiere());
+		model.addAttribute("routieres", service.findAllRoutiere());
+		return "routieres";
+
+	}
+
+	@RequestMapping(value = "/saveRoutiere")
+	public String save(Routiere routiere, Model model) {
+		if (routiere.getIdCargaison() == 0) {
+			service.ajouterRoutiere(routiere);
+			model.addAttribute("routiere", new Routiere());
+			model.addAttribute("routieres", service.findAllRoutiere());
+			return "routieres";
+		} else {
+			service.modifierRoutiere(routiere);
+			model.addAttribute("routiere", new Routiere());
+			model.addAttribute("routieres", service.findAllRoutiere());
+			return "routieres";
+		}
+	}
+
+	@RequestMapping(value = "/deleteRoutiere")
+	public String delete(@RequestParam int IdCargaison, Model model) {
+		service.supprimerRoutiere(IdCargaison);
+		model.addAttribute("routiere", new Routiere());
+		model.addAttribute("routieres", service.findAllRoutiere());
+		return "routieres";
+	}
+
+	@RequestMapping(value = "/editRoutiere")
+	public String edit(@RequestParam int IdCargaison, Model model) {
+		model.addAttribute("routiere", service.getRoutiere(IdCargaison));
+		model.addAttribute("routieres", service.findAllRoutiere());
+		return "routieres";
+	}
 
 }
