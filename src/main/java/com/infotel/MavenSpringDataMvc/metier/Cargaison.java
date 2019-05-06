@@ -1,12 +1,18 @@
 package com.infotel.MavenSpringDataMvc.metier;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 
+@Entity
+@Scope
+@Component
 public abstract class Cargaison {
 	
 	@Id
@@ -17,8 +23,8 @@ public abstract class Cargaison {
 	protected String depart;
 	protected String destination;
 	
-	//@ManyToOne
-	//private SocieteTransport societeTransport;
+	@ManyToOne
+	private SocieteTransport societeTransport;
 	
 	
 	public int getIdCargaison() {
@@ -45,6 +51,18 @@ public abstract class Cargaison {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+	public SocieteTransport getSocieteTransport() {
+		return societeTransport;
+	}
+	public void setSocieteTransport(SocieteTransport societeTransport) {
+		this.societeTransport = societeTransport;
+	}
+	@Override
+	public String toString() {
+		return "Cargaison [idCargaison=" + idCargaison + ", nomCargaison=" + nomCargaison + ", depart=" + depart
+				+ ", destination=" + destination + ", societeTransport=" + societeTransport + "]";
+	}
+	
 	
 	
 	
