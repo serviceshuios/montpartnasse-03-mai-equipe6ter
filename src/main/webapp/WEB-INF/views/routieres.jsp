@@ -19,6 +19,22 @@
 					<td><f:hidden path="idCargaison" /></td>
 				</tr>
 				<tr>
+					<td>Nom Cargaison:</td>
+					<td><f:input path="nomCargaison" /></td>
+					<td><f:errors path="nomCargaison" cssClass="error" /></td>
+				</tr>
+				<tr>
+					<td>Depart:</td>
+					<td><f:input path="depart" /></td>
+					<td><f:errors path="depart" cssClass="error" /></td>
+				</tr>
+								<tr>
+					<td>Destination:</td>
+					<td><f:input path="destination" /></td>
+					<td><f:errors path="destination" cssClass="error" /></td>
+				</tr>
+							
+				<tr>
 					<td>Immatriculation:</td>
 					<td><f:input path="immatriculation" /></td>
 					<td><f:errors path="immatriculation" cssClass="error" /></td>
@@ -44,7 +60,10 @@
 	<div id="listProduits">
 		<table class="table1">
 			<tr>
-				<th>ID ROUTIERE</th>
+				<th>ID CARGAISON</th>
+				<th>NOM CARGAISON</th>
+				<th>DEPART</th>
+				<th>DESTINATION</th>
 				<th>IMMATRICULATION</th>
 				<th>PEAGE</th>
 				<th>SUPPRIMER</th>
@@ -53,6 +72,9 @@
 			<c:forEach var="r" items="${routieres}">
 				<tr>
 					<td>${r.idCargaison}</td>
+					<td>${r.nomCargaison}</td>
+					<td>${r.depart}</td>
+					<td>${r.destination}</td>
 					<td>${r.immatriculation}</td>
 					<td>${r.peage}</td>
 					<td><a href="deleteRoutiere?idCargaison=${s.idCargaison}">supprimer</a></td>
