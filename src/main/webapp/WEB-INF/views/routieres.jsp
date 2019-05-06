@@ -13,15 +13,10 @@
 <body>
 	<h2>CRUD ROUTIERES</h2>
 	<div>
-		<f:form modelAttribute="routieres" method="POST" action="/saveRoutiere">
+		<f:form modelAttribute="routiere" method="POST" action="/saveRoutiere">
 			<table>
 				<tr>
 					<td><f:hidden path="idCargaison" /></td>
-				</tr>
-				<tr>
-					<td>NOM:</td>
-					<td><f:input path="nomSociete" /></td>
-					<td><f:errors path="nomSociete" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td>Immatriculation:</td>
