@@ -11,6 +11,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>
+		<p>
+			<a href="http://localhost:8080/MavenSpringDataMvc/">HOME</a>
+		</p>
+	</div>
 	<h2>CRUD AERIENNES</h2>
 	<div>
 		<f:form modelAttribute="aerienne" method="POST" action="saveAerienne">
@@ -28,12 +33,12 @@
 					<td><f:input path="depart" /></td>
 					<td><f:errors path="depart" cssClass="error" /></td>
 				</tr>
-								<tr>
+				<tr>
 					<td>Destination:</td>
 					<td><f:input path="destination" /></td>
 					<td><f:errors path="destination" cssClass="error" /></td>
 				</tr>
-							
+
 				<tr>
 					<td>NumVol:</td>
 					<td><f:input path="numVol" /></td>
@@ -52,11 +57,12 @@
 				</tr>
 			</table>
 
-			
+
 
 
 		</f:form>
 	</div>
+
 	<div id="listProduits">
 		<table class="table1">
 			<tr>

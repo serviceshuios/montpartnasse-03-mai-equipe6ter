@@ -11,6 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div>
+		<p>
+			<a href="http://localhost:8080/MavenSpringDataMvc/">HOME</a>
+		</p>
+	</div>
+
 	<h2>CRUD SOCIETES DE TRANSPORT</h2>
 	<div>
 		<f:form modelAttribute="societeTransport" method="POST"
@@ -35,20 +41,10 @@
 					<td><f:errors path="dateCreation" cssClass="error" /></td>
 				</tr>
 
-
-				<!-- DROPDOWN code -->
-				<tr>
-					<td>Cargaison:</td>
-					<td><f:select path="cargaisons">
-							<f:option value="" label="Sélectionner une cargaison" />
-							<f:options value="idCargaison" items="${cargaisons}" />
-						</f:select></td>
-					<td><f:errors path="cargaisons" /></td>
-				</tr>
-
 				<tr>
 					<td><input type="submit" value="enregistrer" /></td>
 				</tr>
+
 			</table>
 
 
@@ -56,6 +52,8 @@
 
 		</f:form>
 	</div>
+
+
 	<div id="listProduits">
 		<table class="table1">
 			<tr>

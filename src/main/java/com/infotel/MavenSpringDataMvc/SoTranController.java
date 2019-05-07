@@ -26,7 +26,7 @@ public class SoTranController {
 	}
 
 	@RequestMapping(value = "/saveSocieteTransport")
-	public String save(SocieteTransport societeTransport, Integer idCargaison, Integer idSociete, Model model) {
+	public String save(SocieteTransport societeTransport, Model model) {
 		if (societeTransport.getIdSociete() == 0) {
 			
 			System.out.println(societeTransport);
@@ -62,6 +62,26 @@ public class SoTranController {
 		model.addAttribute("societeTransports", service.findAllSocieteTransport());
 		model.addAttribute("cargaisons",service.findAllCargaison());
 		return "societeTransports";
+	}
+	
+	//CONTROLLER UPDATE ++++++++++++++++++++++++++++++++++++++++++++++++++
+	
+	@RequestMapping(value = "/indexUpdate", method = RequestMethod.GET)
+	public String afficher(Model model) {
+		model.addAttribute("societeTransport", new SocieteTransport());
+		model.addAttribute("societeTransports", service.findAllSocieteTransport());
+		model.addAttribute("cargaisons",service.findAllCargaison());
+		return "update";
+	}
+	
+	
+	
+	@RequestMapping(value = "/attribuerUpdate")
+	public String attribuer(@RequestParam int idSociete,@RequestParam int idCargaison, Model model) {
+		service.ajouterCargaisonSociete(idSociete, idCargaison);
+		model.addAttribute("societeTransports", service.findAllSocieteTransport());
+		model.addAttribute("cargaisons",service.findAllCargaison());
+		return "update";
 	}
 
 }

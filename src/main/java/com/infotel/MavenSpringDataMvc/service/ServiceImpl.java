@@ -157,7 +157,7 @@ public class ServiceImpl implements Iservice {
 	}
 
 	@Override
-	public void ajouterCargaisonSociete(int idSociete, Integer idCargaison) {
+	public void ajouterCargaisonSociete(int idSociete, int idCargaison) {
 		CargaisonRepository.ajouterCargaisonSociete(idSociete, idCargaison);
 		
 	}

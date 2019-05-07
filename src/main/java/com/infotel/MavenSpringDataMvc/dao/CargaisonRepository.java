@@ -11,8 +11,8 @@ import com.infotel.MavenSpringDataMvc.metier.Cargaison;
 public interface CargaisonRepository extends JpaRepository<Cargaison, Integer> {
 	@Transactional
 	@Modifying
-	@Query("update Cargaison set c.societeTransport.idSociete = ?1 where c.idCargaison = ?2")
-	public void ajouterCargaisonSociete(int idSociete, Integer idCargaison);
+	@Query("update Cargaison c set c.societeTransport.idSociete = ?1 where c.idCargaison = ?2")
+	public void ajouterCargaisonSociete(int idSociete, int idCargaison);
 }
 
 

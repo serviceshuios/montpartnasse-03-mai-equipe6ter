@@ -12,6 +12,7 @@
 <p><a href = "http://localhost:8080/MavenSpringDataMvc/indexSocieteTransport">Formulaire Sociétés de Transport</a></p>
 <p><a href = "http://localhost:8080/MavenSpringDataMvc/indexAerienne">Formulaire Cargaisons Aériennes</a></p>
 <p><a href = "http://localhost:8080/MavenSpringDataMvc/indexRoutiere">Formulaire Cargaisons Routières</a></p>
+<p><a href = "http://localhost:8080/MavenSpringDataMvc/indexUpdate">UPDATE</a></p>
 
 </body>
 </html>
